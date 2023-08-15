@@ -1,0 +1,23 @@
+#!/bin/make -f
+INCLFLAGS=-I../include
+OPTFLAGS=-g
+CFLAGS=$(INCLFLAGS) $(OPTFLAGS)
+LDFLAGS=-lm
+
+spmd_treecode: spmd_octree.o spmd_nbody.o
+	$(CC) -o ../bin/$@ $^ $(LDFLAGS)
+spmd_fuzzy-knn: spmd_octree.o spmd_fuzzy-knn.o
+	$(CC) -o ../bin/$@ $^ $(LDFLAGS)
+set_rotation: spmd_octree.o set_rotation.o
+	$(CC) -o ../bin/$@ $^ $(LDFLAGS)
+indent:
+	/usr/bin/indent -orig -ts2 -nuts *.c
+clean:
+	$(RM) *.o
+mostlyclean: clean
+	$(RM) *~
+fast:
+	make OPTFLAGS='-O3 -floop-parallelize-all'
+	make OPTFLAGS='-O3 -floop-parallelize-all' set_rotation
+debug: spmd_octree.o spmd_nbody.o
+	$(CC) -o spmd_treecode-dbg $^ $(LDFLAGS)

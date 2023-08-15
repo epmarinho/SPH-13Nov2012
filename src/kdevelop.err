@@ -1,0 +1,33 @@
+kdevelop(1360)/kdevplatform (shell) KDevelop::SessionControllerPrivate::performRecovery: Starting recovery from  "/home/emarinho/.kde/share/apps/kdevelop/sessions/{23c57d08-a94f-41dc-b792-bd80746cc43a}/recovery/current" 
+X Error: BadWindow (invalid Window parameter) 3
+  Major opcode: 20 (X_GetProperty)
+  Resource id:  0x1600012
+loaded the Generic plugin 
+kdevelop(1360)/konsole Konsole::Session::run: Attempted to re-run an already running session. 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/old/spmd_fuzzy-knn.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/tools/set_rotation.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/old/spmd_knn-improved.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/tools/generate-data.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/tools/mksphere.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/tools/mkdisk.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/tools/recenter.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/old/spmd_knn-benchmark.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/old/spmd_knn-dbg.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/old/spmd_knn-v1.4.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/tools/mkcube.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/tools/rotate.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/old/spmd_nbody-v1-3.c") missing path: "/home/emarinho/projects/sph/include/" 
+Enchant dict for "en_US" 0x6cfa7d0 
+X Error: BadWindow (invalid Window parameter) 3
+  Major opcode: 20 (X_GetProperty)
+  Resource id:  0x1600270
+Enchant dict for "en_US" 0x6fc1400 
+X Error: BadWindow (invalid Window parameter) 3
+  Major opcode: 20 (X_GetProperty)
+  Resource id:  0x16002b0
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/leapfrog.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/leapfrog.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/treesph.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/treesph.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/leapfrog.c") missing path: "/home/emarinho/projects/sph/include/" 
+kdevelop(1360)/kdevelop (cpp support) IncludePathComputer::computeBackground: Include-path was missing in list returned by build-manager, adding it now. file was: KUrl("file:///home/emarinho/projects/sph/src/leapfrog.c") missing path: "/home/emarinho/projects/sph/include/" 

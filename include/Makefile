@@ -1,0 +1,3 @@
+#!/bin/make
+
+CFLAGS=-I.
