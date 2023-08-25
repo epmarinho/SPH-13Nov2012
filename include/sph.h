@@ -1,4 +1,5 @@
 /**@<sph.h>::*/
+#pragma once
 
 #define UMAX    10000
 #define UMIN    .001

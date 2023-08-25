@@ -1,3 +1,4 @@
+#pragma once
 
 typedef struct {
   double          d[MAXNEIGHBORINGS];

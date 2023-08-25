@@ -1,3 +1,4 @@
+#pragma once
 /**@<leapfrog.h>::**/
 extern double dtold[NMAX];
 

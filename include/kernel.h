@@ -1,3 +1,4 @@
+#pragma once
 /**@<kernel.h>::*/
 extern double W[NMAX][MAXNEIGHBORINGS];
 extern double gradW[NMAX][MAXNEIGHBORINGS][3];

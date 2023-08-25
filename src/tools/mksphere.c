@@ -11,7 +11,7 @@ void
 usage(const char *cmdname)
 {
     char           *cmdformat =
-        "%s R0 R M V Xoff Yoff Zoff VXoff VYoff VZoff u\n";
+        "%s N R0 R M V Xoff Yoff Zoff VXoff VYoff VZoff u\n";
     printf(cmdformat, cmdname);
 }
 
@@ -27,7 +27,7 @@ main(int argc, const char *argv[])
         int             n = atoi(argv[1]);
         double          R0 = atof(argv[2]);
         double          R = atof(argv[3]);
-	double		ratio = pow(R0 / R, 2);
+        double          ratio = pow(R0 / R, 2);
         double          M = atof(argv[4]);
         double          m = M / n;
         double          u;
@@ -49,7 +49,9 @@ main(int argc, const char *argv[])
             double          r,
                             s,
                             x[3],
-                            v[3];
+                            v[3],
+                            xm[3],
+                            vm[3];
             do {
                 for (r = j = 0; j < 3; j++) {
                     x[j] = (2 * erand48(Xi) - 1);
@@ -64,20 +66,24 @@ main(int argc, const char *argv[])
             } while (s > 1);
             for (j = 0; j < 3; j++) {
                 x[j] *= R;
+                xm[j] += x[j];
                 v[j] *= V * R * R / (r * 128 + R * R);
+                vm[j] += v[j];
             }
-            /*
-             *          for (j = 0; j < 3; j++) {
-             *          v[j] -= .25 * x[j];
-             }
-             */
 
+	    double dtold = 0;
 
             printf
-                ("%20.16le %20.16le %20.16le %20.16le %20.16le %20.16le %20.16le %20.16le\n",
-                 m, x[0] + offset[0], x[1] + offset[1], x[2] + offset[2],
-                 v[0] + voffset[0], v[1] + voffset[1], v[2] + voffset[2],
-                 u);
+                ("%20.16le %20.16le %20.16le %20.16le %20.16le %20.16le %20.16le %20.16le %20.16le\n",
+                 m, 
+		 x[0] - xm[0] / n + offset[0],
+                 x[1] - xm[1] / n + offset[1],
+                 x[2] - xm[2] / n + offset[2],
+                 v[0] - vm[0] / n + voffset[0],
+                 v[1] - vm[1] / n + voffset[1],
+                 v[2] - vm[2] / n + voffset[2], 
+		 u, 
+		 dtold);
         }
         return 0;
     }

@@ -11,7 +11,7 @@ void
 usage(const char *cmdname)
 {
     char           *cmdformat =
-        "%s R0 R M V Xoff Yoff Zoff VXoff VYoff VZoff u\n";
+        "%s N R0 R M V Xoff Yoff Zoff VXoff VYoff VZoff u\n";
     printf(cmdformat, cmdname);
 }
 
@@ -71,14 +71,19 @@ main(int argc, const char *argv[])
                 vm[j] += v[j];
             }
 
+	    double dtold = 0;
+
             printf
                 ("%20.16le %20.16le %20.16le %20.16le %20.16le %20.16le %20.16le %20.16le %20.16le\n",
-                 m, x[0] - xm[0] / n + offset[0],
+                 m, 
+		 x[0] - xm[0] / n + offset[0],
                  x[1] - xm[1] / n + offset[1],
                  x[2] - xm[2] / n + offset[2],
                  v[0] - vm[0] / n + voffset[0],
                  v[1] - vm[1] / n + voffset[1],
-                 v[2] - vm[2] / n + voffset[2], u, .0);
+                 v[2] - vm[2] / n + voffset[2], 
+		 u, 
+		 dtold);
         }
         return 0;
     }

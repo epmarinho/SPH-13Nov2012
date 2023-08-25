@@ -1,3 +1,4 @@
+#pragma once
 extern int             disallow[MAXNODES];
 extern int             welldistant[NMAX];
 extern double          Omega;

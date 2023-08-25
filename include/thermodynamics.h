@@ -1,4 +1,5 @@
 /**@<thermodynamics.h>::*/
+#pragma once
 
 extern double
 Rgas /* erg mole⁻¹ Kelvin⁻¹ */ ,
