@@ -6,11 +6,10 @@
 #include <constants.h>
 #include <octree.h>
 #include <macros.h>
+#include <n-body.h>
 #include <k-nn.h>
 
 double          q2nd[MAXNODES];
-
-int             disallow[MAXNODES];
 
 double
 query2node_distance(int query, int cluster)

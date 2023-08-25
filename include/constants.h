@@ -1,3 +1,4 @@
+#pragma once
 #define ROOT            0
 #define DIM             3
 #define GRD             1<<DIM

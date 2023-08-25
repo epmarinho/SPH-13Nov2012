@@ -1,3 +1,4 @@
+#pragma once
 extern double          Mtot;
 extern double          mass[NMAX];
 extern double          x[NMAX][DIM];

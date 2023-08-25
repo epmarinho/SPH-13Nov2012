@@ -22,7 +22,7 @@ double          v[NMAX][DIM];
 double          g[NMAX][DIM];
 double          dt = 1. / 128;  // it depends on the gravity time scale
 
-main(int argc, char const *argv[])
+int main(int argc, char const *argv[])
 {
   int             n = NMAX,
   i;
@@ -31,15 +31,20 @@ main(int argc, char const *argv[])
 
   if (argc > 1) {
     input = fopen(argv[1], "r");
+    fprintf(stderr,"input file: %s\n", argv[1]);
   } else {
     input = stdin;
   }
 
   if (argc > 2) {
     n = atoi(argv[2]);
+    fprintf(stderr,"number of particles: %d\n", n);
+    fprintf(stderr, "entering getdata\n");
     getdata(n, input);
+    fprintf(stderr, "entering Octree_build for n = %d\n", n);
     Octree_build(n);
   } else {
+    fprintf(stderr, "entering Octree_build for n = %d\n", n);
     Octree_build(n = getdata(n, input));
   }
 
@@ -49,19 +54,23 @@ main(int argc, char const *argv[])
     K = ceil(sqrt((double) n));
   }
   K = min(K, MAXNEIGHBORINGS);
+  fprintf(stderr,"K = %d\n", K);
 
   if (argc > 4) {
     Omega = atof(argv[4]);
+    fprintf(stderr,"Omega = %lg\n", Omega);
   }
 
   if (argc > 5) {
     epsilon = atof(argv[5]);
+    fprintf(stderr,"epsilon = %lg\n", epsilon);
   }
 
   {
     double          dt2;
     if (argc > 6) {
       dt = atof(argv[6]);
+      fprintf(stderr,"dt = %lg\n", dt);
     }
     for (dt2 = 1; dt2 > dt; dt2 *= .5);
     dt = dt2;
@@ -75,10 +84,13 @@ main(int argc, char const *argv[])
    * ##############################################################
    */
 
+  fprintf(stderr, "entering octree_gravity\n");
   octree_gravity(n);
 
+  fprintf(stderr, "entering sph_quantities\n");
   sph_quantities(n);
 
+  fprintf(stderr, "entering leapfrog\n");
   leapfrog(n, .5 * dt);
 
   /**
@@ -89,8 +101,10 @@ main(int argc, char const *argv[])
    * ######################################################
    */
 
+  fprintf(stderr, "entering sph_quantities again\n");
   sph_quantities(n);
 
+  fprintf(stderr, "entering leapfrog too\n");
   leapfrog(n, .5 * dt);
 
   /**
@@ -100,6 +114,7 @@ main(int argc, char const *argv[])
    *          <<x(n+1/2) v(n+1) u(n+1/2)>>
    * ######################################################
    */
+  fprintf(stderr, "entering show_result\n");
   show_result(n, output = stdout);
 
   exit(0);

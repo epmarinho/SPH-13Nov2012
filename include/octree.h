@@ -23,6 +23,7 @@
  * leaf-flag is an entry flag to mark the enrty for removal from the table as
  * it became a leaf.
  */
+#pragma once
 
 extern int hashTB[NMAX][4];
 #define INDEX 0
