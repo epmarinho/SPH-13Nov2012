@@ -5,12 +5,16 @@
 #include <octree.h>
 #include <n-body.h>
 
+double Phi[NMAX];
+
 int             disallow[MAXNODES];
 int             welldistant[NMAX];
 double          Omega = (double) 1 / 4;
 double          epsilon = (double) 1 / 64;  // it depends on the gravity
                                             // length
 int             accepted;
+
+extern double Etot, Kinect, Ugrav, Utherm;
 
 double
 distance(double x[DIM], double y[DIM])
@@ -106,11 +110,14 @@ octree_gravity(int n)
             r += epsilon;
 #endif
 
+            Phi[i] += Octree[nu].mass / sqrt(r);
+
             for (j = 0; j < DIM; j++) {
                 double          delta = Octree[nu].vertex[j] - x[i][j];
                 g[i][j] += Octree[nu].mass * delta / (r * sqrt(r));
             }
 
         }
-    }
+        Ugrav += -.5 * Phi[i] * mass[i];
+    } // end for i
 }

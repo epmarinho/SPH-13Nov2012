@@ -29,6 +29,9 @@ Gamma           = 2,
 Lambda_1        = 1,
 Lambda_2        = 10;
 
+extern double Etot, Kinect, Ugrav, Utherm;
+extern double Phi[NMAX];
+
 double          rho[NMAX];
 void
 sph_densities(int N)
@@ -136,6 +139,7 @@ sph_quantities(int n)
       }//endfor k
     }//endfor l
 
+#ifdef __ADOPT_CRITICAL_COUNTERMEASURES__
     /*
      * artificial heating:
      */
@@ -152,6 +156,9 @@ sph_quantities(int n)
       else if (rho_2 < rho[i] && rho[i] < rho_3)
         udot[i] -= Lambda_2 * u[i];
     }
+#endif
+
+  Utherm += u[i]*mass[i];
 
   }//endfor i
 }
