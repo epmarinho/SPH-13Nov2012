@@ -21,13 +21,17 @@ double          x[NMAX][DIM];
 double          v[NMAX][DIM];
 double          g[NMAX][DIM];
 double          dt = 1. / 128;  // it depends on the gravity time scale
+double          Etot, Kinect, Ugrav, Utherm;
+
+extern double Phi[NMAX];
+
 
 int main(int argc, char const *argv[])
 {
   int             n = NMAX,
   i;
   FILE           *input,
-  *output;
+  *output, *Energies;
 
   if (argc > 1) {
     input = fopen(argv[1], "r");
@@ -107,6 +111,8 @@ int main(int argc, char const *argv[])
   fprintf(stderr, "entering leapfrog too\n");
   leapfrog(n, .5 * dt);
 
+  Etot = Kinect + Ugrav + Utherm;
+
   /**
    * output
    * ######################################################
@@ -117,5 +123,7 @@ int main(int argc, char const *argv[])
   fprintf(stderr, "entering show_result\n");
   show_result(n, output = stdout);
 
+  Energies = fopen("Enengies_hist.txt", "a+");
+  fprintf(Energies,"%f %f %f %f\n",Etot, Kinect, Ugrav, Utherm);
   exit(0);
 }

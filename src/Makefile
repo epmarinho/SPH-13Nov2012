@@ -21,3 +21,5 @@ dbg:
 gdb: dbg
 set_rotation: $(objlist) set_rotation.o
 	$(CC) -o ../bin/$@ $^ $(LDFLAGS)
+
+DIRECTIVES=-D_INTEGRATE_ON_ENERGIES_

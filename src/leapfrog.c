@@ -14,6 +14,9 @@
 #include <kernel.h>
 #include <sph.h>
 #include <leapfrog.h>
+
+extern double Etot, Kinect, Ugrav, Utherm;
+
 double
 scalarprod(double x[], double y[])
 {
@@ -51,7 +54,7 @@ leapfrog(int n, double DT)
        * present length scale should not be crossed by the particle
        * along a reasonable time scale
        */
-      while (vscalar = sqrt(scalarprod(v[i], v[i])) * dt > ds
+      while ((vscalar = sqrt(scalarprod(v[i], v[i])) * dt) > ds
         && dt > dtmin)
         dt /= 2;
 
@@ -82,7 +85,10 @@ leapfrog(int n, double DT)
         double accell = g[i][j] - Paccel[i][j];
         x[i][j] += (v[i][j] + .5 * accell * dtau) * tau;
         v[i][j] += accell * tau;
+
       }
+
+      Kinect += .5 * mass[i] * scalarprod(v[i], v[i]);
 
       #ifdef _INTEGRATE_ON_ENERGIES_
       u[i] += udot[i] * tau;
@@ -92,6 +98,7 @@ leapfrog(int n, double DT)
       u[i] = min(max(u[i], UMIN), UMAX);
       #endif
       dtold[i] = dt;
+
       /*
        * end leapfrog
        */

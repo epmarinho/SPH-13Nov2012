@@ -16,7 +16,7 @@ fi
 for((i=m;i<n;i++))
 do
 	let j=i+1
-	echo "time $simcode $seriesname$i.data $N $K $omega $epsilon $dt >$seriesname$j.data"
+	# echo "time $simcode $seriesname$i.data $N $K $omega $epsilon $dt >$seriesname$j.data"
 	time $simcode $seriesname$i.data $N $K $omega $epsilon $dt >$seriesname$j.data
 	echo $i '->' $j
 	[ -z $gzflag ] || gzip $seriesname$i.data
